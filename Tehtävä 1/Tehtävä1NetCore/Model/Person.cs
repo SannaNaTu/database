@@ -39,5 +39,9 @@ namespace Tehtävä1NetCore.Model
         {
             return $"{Name},{Age}";
         }
+        public string ShowData()
+        {
+            return $"{Id}, {Name}, {Age}";
+        }
     }
 }

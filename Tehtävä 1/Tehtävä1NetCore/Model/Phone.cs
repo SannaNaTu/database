@@ -7,6 +7,12 @@ namespace Tehtävä1NetCore.Model
 {
     public partial class Phone
     {
+        public Phone(string type, string number)
+        {
+            Type = type;
+            Number = number;
+        }
+
         public long Id { get; set; }
         [Column(TypeName = "nchar(10)")]
         public string Type { get; set; }
@@ -17,5 +23,9 @@ namespace Tehtävä1NetCore.Model
         [ForeignKey("PersonId")]
         [InverseProperty("Phone")]
         public Person Person { get; set; }
+        public override string ToString()
+        {
+            return $"{Type} - {Number}";
+        }
     }
 }
